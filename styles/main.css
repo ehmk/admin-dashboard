@@ -17,7 +17,7 @@
   grid-area: 1 / 2 / 2 / 3;
   padding: 20px 45px;
   display: grid;
-  grid-template-columns: 2fr 1fr;
+  grid-template-columns: 400px 1fr;
   grid-template-rows: 1fr 1fr;
   gap: 20px;
 }
@@ -76,7 +76,7 @@
 .buttons {
   display: grid;
   grid-template-columns: repeat(3, 80px);
-  align-items: end;
+  align-items: center;
   justify-content: end;
   gap: 10px;
 }
