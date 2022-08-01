@@ -24,13 +24,14 @@
   display: grid;
   grid-template-columns: 0.2fr 5fr;
   align-items: center;
+  column-gap: 10px;
 }
 
 #search-input {
   background-color: rgb(226, 224, 224);
   border: none;
   border-radius: 20px;
-  line-height: 20px;
+  height: 30px;
   width: min(100%, 500px);
   padding: 0 15px;
   font-weight: bold;
@@ -184,7 +185,7 @@
 .right-column {
   display: grid;
   grid-template-rows: min-content 1fr;
-  grid-template-columns: 250px;
+  grid-template-columns: 300px;
   row-gap: 20px;
   padding: 25px;
   justify-content: center;
@@ -222,7 +223,7 @@
 
 .trending {
   display: grid;
-  grid-template-rows: min-content 1fr;
+  grid-template-rows: min-content min-content;
   gap: 20px;
 }
 
@@ -230,6 +231,42 @@
   background: white;
   border-radius: 10px;
   box-shadow: 5px 5px 5px rgb(109, 109, 109);
+  padding: 25px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.trending-article {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 10px;
+  font-size: 0.9rem;
+}
+
+.trending-article > a {
+  text-decoration: none;
+  color: black;
+  align-self: end;
+  font-weight: bold;
+}
+
+.trending-article > p {
+  grid-column: 2 / 3;
+  color: grey;
+}
+
+.trending-article img {
+  height: 45px;
+  width: 45px;
+  border-radius: 30px;
+}
+
+.trending-article > .profile-picture {
+  grid-row: 1 / -1;
+  justify-self: center;
+  align-self: center;
 }
 
 .projects {
