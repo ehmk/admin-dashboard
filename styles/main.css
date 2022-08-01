@@ -6,10 +6,10 @@
 
 .container {
   display: grid;
-  width: 100vw;
-  height: 100vh;
+  /* width: 100vw;
+  height: 100vh; */
   grid-template-columns: 250px 1fr;
-  grid-template-rows: minmax(150px, 1fr) 4fr;
+  grid-template-rows: 200px 1fr;
 }
 
 .header {
@@ -62,15 +62,30 @@
   grid-template-columns: min-content 1fr;
   grid-template-rows: 1fr 1fr;
   column-gap: 10px;
+  row-gap: 5px;
   align-items: center;
   font-weight: bold;
   font-size: 0.8rem;
 }
 
-.greeting > .profile-picture {
-  grid-row: 1 / 3;
+.greeting .profile-picture {
   height: 50px;
   width: 50px;
+}
+
+.profile-link {
+  grid-row-start: 1;
+  grid-row-end: -1;
+}
+
+.greeting > p {
+  align-self: end;
+  grid-area: 1 / 2 / 2 / 3;
+}
+
+.greeting > h2 {
+  align-self: start;
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 .buttons {
@@ -107,7 +122,6 @@
 .main-content {
   background-color: rgb(223, 219, 219);
   grid-area: 2 / 2 / 3 / 3;
-  gap: 15px;
 }
 
 .nav-header {
@@ -169,47 +183,69 @@
 .right-column {
   display: grid;
   grid-template-rows: 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: 250px;
+  row-gap: 20px;
   padding: 25px;
+  justify-content: center;
 }
 
 .announcements {
   display: grid;
   grid-template-rows: min-content 1fr;
-  gap: 10px;
+  gap: 20px;
 }
 
 .announcements-panel {
   background: white;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(109, 109, 109);
 }
 
 .trending {
   display: grid;
   grid-template-rows: min-content 1fr;
-  gap: 10px;
+  gap: 20px;
 }
 
 .trending-panel {
   background: white;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgb(109, 109, 109);
 }
 
 .projects {
   display: grid;
-  grid-template-rows: min-content repeat(3, 175px);
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  row-gap: 10px;
+  grid-template-rows: 20px repeat(4, 300px);
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  row-gap: 20px;
   column-gap: 25px;
   padding: 25px;
 }
 
-.projects > h2 {
+.project-header {
   grid-column: 1 / -1;
+  grid-row: 1 / 2;
 }
 
 .project {
   background-color: white;
   border-radius: 10px;
   border-left: 10px solid rgb(250, 171, 2);
+  box-shadow: 5px 5px 5px rgb(109, 109, 109);
+  padding: 30px 20px;
+  display: grid;
+  grid-template-rows: 1fr 2fr 1fr;
+  line-height: 20px;
+}
+
+.project-links {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.project-links img {
+  height: 30px;
+  width: 30px;
 }
